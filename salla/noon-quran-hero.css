@@ -1,0 +1,425 @@
+/* Noon Quran Hero Section - Salla Integration */
+/* RTL-safe, injection-scoped, performance-optimized */
+
+#noon-quran-hero {
+  --color-purple-dark: #5a3a8a;
+  --color-yellow-bright: #f4b917;
+  --color-ivory-warm: #f5f1ed;
+  --color-text-dark: #2d1b4e;
+  --color-text-light: #ffffff;
+  --radius-lg: 2rem;
+  --radius-md: 1.5rem;
+  --spacing-base: 1rem;
+}
+
+#noon-quran-hero {
+  direction: rtl;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-ivory-warm);
+  min-height: 600px;
+  position: relative;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* Background layers */
+#noon-quran-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("var(--asset-paper-texture)");
+  background-size: cover;
+  background-attachment: fixed;
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 1;
+}
+
+#noon-quran-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 800px 600px at 30% 50%, rgba(255, 255, 255, 0.3), transparent);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Decorative overlay on right */
+.noon-quran-hero__writing-overlay {
+  position: absolute;
+  inset: 0;
+  right: 0;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.noon-quran-hero__writing-overlay img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right center;
+}
+
+/* Main container */
+.noon-quran-hero__container {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(1rem, 5vw, 4rem);
+  padding: clamp(2rem, 8vw, 5rem);
+  margin: 0 auto;
+  max-width: 100%;
+  width: 100%;
+  min-height: 600px;
+}
+
+/* Left side - Product collage */
+.noon-quran-hero__product {
+  flex: 0 0 auto;
+  width: clamp(280px, 45%, 500px);
+  height: auto;
+}
+
+.noon-quran-hero__product img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-lg);
+}
+
+/* Right side - Content */
+.noon-quran-hero__content {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1rem, 3vw, 2rem);
+}
+
+/* Logo section */
+.noon-quran-hero__logo-wrapper {
+  position: relative;
+  width: fit-content;
+  margin-inline-start: auto;
+}
+
+.noon-quran-hero__logo-container {
+  background-color: var(--color-purple-dark);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;
+  width: auto;
+}
+
+.noon-quran-hero__logo-container img {
+  height: auto;
+  width: clamp(80px, 12vw, 120px);
+  display: block;
+}
+
+/* Verse section */
+.noon-quran-hero__verse {
+  margin-inline-start: auto;
+  text-align: center;
+  padding-inline: 1rem;
+}
+
+.noon-quran-hero__verse img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Title pill */
+.noon-quran-hero__title-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.noon-quran-hero__title-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-yellow-bright);
+  border-radius: 3rem;
+  padding: 0.75rem 1.5rem;
+  box-shadow: 0 4px 12px rgba(244, 185, 23, 0.2);
+}
+
+.noon-quran-hero__title-pill img {
+  height: auto;
+  width: clamp(120px, 18vw, 200px);
+  display: block;
+}
+
+/* Description text */
+.noon-quran-hero__description {
+  margin-inline-start: auto;
+  max-width: 400px;
+  text-align: right;
+  padding-inline: 1rem;
+}
+
+.noon-quran-hero__description img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Benefits bar */
+.noon-quran-hero__benefits {
+  background-color: var(--color-purple-dark);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+  margin-inline-start: auto;
+  flex-wrap: wrap;
+  box-shadow: 0 8px 24px rgba(90, 58, 138, 0.15);
+}
+
+.noon-quran-hero__benefit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+  min-width: 80px;
+  text-align: center;
+}
+
+.noon-quran-hero__benefit-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.noon-quran-hero__benefit-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.noon-quran-hero__benefit-text img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  width: clamp(60px, 14vw, 100px);
+}
+
+/* CTA Button (hidden by default) */
+.noon-quran-hero__cta {
+  display: none;
+  margin-inline-start: auto;
+  background-color: var(--color-yellow-bright);
+  color: var(--color-text-dark);
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(244, 185, 23, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+}
+
+.noon-quran-hero__cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(244, 185, 23, 0.4);
+}
+
+.noon-quran-hero__cta:active {
+  transform: translateY(0);
+}
+
+/* Main click area */
+#noon-quran-hero a {
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Tablet layout */
+@media (max-width: 1024px) {
+  #noon-quran-hero__container {
+    gap: clamp(1rem, 4vw, 2.5rem);
+    padding: clamp(1.5rem, 6vw, 3rem);
+    min-height: auto;
+  }
+
+  .noon-quran-hero__product {
+    width: clamp(240px, 40%, 420px);
+  }
+
+  .noon-quran-hero__logo-container img {
+    width: clamp(70px, 10vw, 100px);
+  }
+
+  .noon-quran-hero__title-pill img {
+    width: clamp(100px, 16vw, 160px);
+  }
+
+  .noon-quran-hero__benefit-text img {
+    width: clamp(50px, 12vw, 80px);
+  }
+
+  .noon-quran-hero__benefits {
+    gap: 0.75rem;
+    padding: 1.25rem;
+  }
+
+  .noon-quran-hero__benefit {
+    min-width: 70px;
+  }
+}
+
+/* Mobile layout - intentional redesign */
+@media (max-width: 768px) {
+  #noon-quran-hero {
+    min-height: auto;
+    padding: 0;
+  }
+
+  #noon-quran-hero::before {
+    background-attachment: scroll;
+  }
+
+  .noon-quran-hero__container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1.5rem;
+    padding: 1.5rem 1rem;
+    min-height: auto;
+  }
+
+  .noon-quran-hero__product {
+    width: 100%;
+    max-width: 380px;
+    order: 1;
+  }
+
+  .noon-quran-hero__content {
+    width: 100%;
+    max-width: 100%;
+    order: 2;
+    gap: 1rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  .noon-quran-hero__logo-wrapper,
+  .noon-quran-hero__verse,
+  .noon-quran-hero__title-wrapper,
+  .noon-quran-hero__description,
+  .noon-quran-hero__benefits {
+    width: 100%;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+  }
+
+  .noon-quran-hero__logo-container {
+    width: fit-content;
+    margin: 0 auto;
+  }
+
+  .noon-quran-hero__title-wrapper {
+    justify-content: center;
+  }
+
+  .noon-quran-hero__verse img,
+  .noon-quran-hero__title-pill img,
+  .noon-quran-hero__description img {
+    margin: 0 auto;
+  }
+
+  .noon-quran-hero__benefits {
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    margin-inline-start: 0;
+  }
+
+  .noon-quran-hero__benefit {
+    min-width: 60px;
+  }
+
+  .noon-quran-hero__benefit-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .noon-quran-hero__benefit-text img {
+    width: clamp(45px, 10vw, 70px);
+  }
+}
+
+/* Extra small mobile */
+@media (max-width: 480px) {
+  .noon-quran-hero__container {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .noon-quran-hero__product {
+    max-width: 100%;
+  }
+
+  .noon-quran-hero__benefits {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding: 0.75rem;
+  }
+
+  .noon-quran-hero__benefit {
+    flex: 0 0 calc(50% - 0.375rem);
+    min-width: unset;
+  }
+
+  .noon-quran-hero__benefit-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .noon-quran-hero__benefit-text img {
+    width: clamp(40px, 8vw, 60px);
+  }
+}
+
+/* Accessibility - respect user preferences */
+@media (prefers-reduced-motion: reduce) {
+  .noon-quran-hero__cta {
+    transition: none;
+  }
+
+  .noon-quran-hero__cta:hover {
+    transform: none;
+  }
+}
+
+/* Print styles */
+@media print {
+  #noon-quran-hero {
+    display: none;
+  }
+}
