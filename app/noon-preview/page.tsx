@@ -101,7 +101,7 @@ export default function NoonPreview() {
           position: relative;
           z-index: 3;
           display: flex;
-          flex-direction: row-reverse;
+          flex-direction: row;
           align-items: center;
           justify-content: space-between;
           gap: clamp(1rem, 5vw, 4rem);
@@ -115,6 +115,7 @@ export default function NoonPreview() {
           flex: 0 0 auto;
           width: clamp(280px, 45%, 500px);
           height: auto;
+          order: 1;
         }
 
         .noon-quran-hero__product img {
@@ -130,6 +131,7 @@ export default function NoonPreview() {
           display: flex;
           flex-direction: column;
           gap: clamp(1rem, 3vw, 2rem);
+          order: 2;
         }
 
         .noon-quran-hero__logo-wrapper {
