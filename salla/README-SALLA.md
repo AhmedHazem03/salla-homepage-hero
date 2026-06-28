@@ -1,67 +1,53 @@
-# Noon Quran Hero - Salla Integration
+# Hero مصحف نون — تركيب سلة
 
-## Installation
+## قبل التركيب
 
-### 1. Add CSS
-- Go to Salla Admin → **Customization → Design → Custom CSS**
-- Paste entire content of `noon-quran-hero.css`
-- Save
+ارفع هذه الملفات الـ14 إلى مجلد عام واحد في R2 أو Cloudinary أو أي CDN، **بنفس الأسماء**:
 
-### 2. Add JavaScript
-- Go to Salla Admin → **Customization → Custom Code / Custom JavaScript**
-- Paste entire content of `noon-quran-hero.js`
-- Save
-
-## Configuration
-
-Edit these **2 constants** in `noon-quran-hero.js`:
-
-```javascript
-const PRODUCT_URL = "https://YOUR-STORE.salla.sa/products/PRODUCT-SLUG";
-const ASSET_BASE_URL = "https://YOUR-CDN-URL/";
+```text
+aswak-logo-white-yellow.png
+hero-paper-background-texture.png
+optional-hero-radial-light-overlay.png
+hero-writing-hand-background-overlay.png
+hero-quran-product-collage.png
+quran-verse-ar.png
+noon-educational-group-title-ar.png
+hero-description-ar.png
+benefit-quality-medal-icon.png
+benefit-quality-text-ar.png
+benefit-fast-shipping-truck-icon.png
+benefit-fast-shipping-text-ar.png
+benefit-secure-shopping-icon.png
+benefit-secure-shopping-text-ar.png
 ```
 
-## Asset Deployment
+مثال لقيمة `ASSET_BASE_URL`:
 
-Upload all 12 image files to your CDN/Salla media and ensure the URL prefix matches `ASSET_BASE_URL`:
-- aswak-logo-white-yellow.png
-- hero-quran-product-collage.png
-- hero-writing-hand-background-overlay.png
-- quran-verse-ar.png
-- noon-educational-group-title-ar.png
-- hero-description-ar.png
-- benefit-quality-medal-icon.png
-- benefit-quality-text-ar.png
-- benefit-fast-shipping-truck-icon.png
-- benefit-fast-shipping-text-ar.png
-- benefit-secure-shopping-icon.png
-- benefit-secure-shopping-text-ar.png
+```text
+https://cdn.example.com/noon-hero/
+```
 
-## Testing Checklist
+## التركيب داخل سلة
 
-✓ Desktop (1280px): Logo, verse, title pill, description, 3 benefits aligned, product collage left  
-✓ Tablet (768px): Layout adjusts, responsive spacing  
-✓ Mobile (480px): Product centered, content stacked, benefits wrap 2x2  
-✓ RTL direction works  
-✓ Click hero → navigates to product URL  
-✓ No horizontal scroll at 360px, 390px, 768px, 1280px  
+1. افتح تخصيص الثيم في سلة، ثم خانة **Custom CSS** والصق محتوى `noon-quran-hero.css` كاملًا واحفظ.
+2. افتح خانة **Custom JavaScript** والصق محتوى `noon-quran-hero.js` كاملًا.
+3. داخل ملف JavaScript غيّر القيمتين فقط:
 
-## Troubleshooting
+```js
+const PRODUCT_URL = 'https://YOUR-STORE-DOMAIN.com/products/PRODUCT-SLUG';
+const ASSET_BASE_URL = 'https://YOUR-CDN-OR-SALLA-MEDIA-URL/';
+```
 
-**Hero doesn't appear:**
-- Verify on homepage (`/`)
-- Check PRODUCT_URL and ASSET_BASE_URL are updated
-- Verify images exist at CDN URLs
+4. احفظ ثم افتح معاينة المتجر. القسم يظهر في الصفحة الرئيسية فقط، في أول عنصر داخل `main`.
 
-**Images missing:**
-- Check CSS scoped under `#noon-quran-hero` only
-- Verify ASSET_BASE_URL ends with `/` consistently
-- Clear cache and test in incognito
+## فحص قبل النشر
 
-**Styles conflict:**
-- All CSS is scoped under `#noon-quran-hero`
-- No global selectors or resets
+- Desktop: الكولاج يسار، والنصوص يمين، وشريط المزايا أسفل اليمين.
+- Tablet: الكولاج أعلى والمحتوى تحته دون قص أو تداخل.
+- Mobile 390px و360px: لا يوجد تمرير أفقي، والمزايا تظهر عنصرين ثم عنصرًا في المنتصف.
+- اضغط الـHero وتأكد أنه يفتح صفحة المنتج الصحيحة.
+- افتح DevTools → Console وتأكد أنه لا توجد أخطاء أو صور 404.
 
-## Removal
+## الإزالة
 
-Delete the CSS from Salla Custom CSS and the JavaScript from Salla Custom Code sections.
+احذف كود CSS وكود JavaScript من تخصيص سلة ثم احفظ. لن يغير هذا أي جزء آخر من الثيم.
